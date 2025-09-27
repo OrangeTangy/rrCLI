@@ -1,39 +1,69 @@
-Robot Raconteur CLI Tool
-Overview
+# Robot Raconteur CLI Tool  
 
-This project is a command-line interface (CLI) tool for interacting with Robot Raconteur
-. It aims to provide functionality similar to ROS 2’s ros2cli, but for Robot Raconteur. The tool will allow developers to:
+## Overview  
+This project is a command-line interface (CLI) tool for interacting with [**Robot Raconteur**](https://robotraconteur.github.io/robotraconteur/doc/core/latest/getting_started/).  
 
-Discover available services on the network
+It is inspired by ROS 2’s `ros2cli` and aims to provide similar functionality for Robot Raconteur services. The tool will allow developers to:  
 
-Inspect service types and members
+- Discover available services on the network  
+- Inspect service types and members  
+- Call service functions and interact with objects  
+- *(Future goal)* Detect common networking/firewall issues  
 
-Call service functions and interact with objects
+The CLI will be designed with a **plugin system** so new commands can be added easily.  
 
-(Future goal) Detect common networking/firewall issues
+---
 
-The CLI will be designed with a plugin system so new commands can be added easily.
+## Installation (Development Mode)  
 
-Installation (Development Mode)
+Clone the repository and install it locally:  
 
-Clone the repo and install it locally:
-
+```bash
 git clone git@github.com:YOUR-USERNAME/rrcli.git
 cd rrcli
 python3 -m venv .venv
 source .venv/bin/activate   # On Windows: .venv\Scripts\activate
 pip install -e .
-
-Usage
-
-For now, the tool just provides a placeholder command:
-
-rrcli --help
+```
 
 
-Output:
 
-Robot Raconteur CLI tool (WIP)
+## Usage
+
+For now, the tool provides only a placeholder command:
+
+```rrcli --help```
+
+Example Output
+
+```Robot Raconteur CLI tool (WIP)
 Available commands:
   discover   Discover available Robot Raconteur services
   info       Show information about a service
+```
+
+## Roadmap
+
+ -Implement discover command
+
+ -Implement info command
+
+ -Add service call support
+
+ -Add plugin system for new features
+
+ -(Optional) Firewall/debugging utilities
+
+## Contributing
+
+-Fork the repository
+
+-Create a new feature branch (git checkout -b feature/my-feature)
+
+-Commit your changes (git commit -m "feat: add new feature")
+
+-Push to your branch (git push origin feature/my-feature)
+
+-Open a Pull Request
+
+
