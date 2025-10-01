@@ -30,40 +30,50 @@ pip install -e .
 
 ## Usage
 
-For now, the tool provides only a placeholder command:
+For now, the tool provides the following commands:
 
-```rrcli --help```
-
-Example Output
 
 ```Robot Raconteur CLI tool (WIP)
 Available commands:
-  discover   Discover available Robot Raconteur services
-  info       Show information about a service
+  rr discover [options]	    Discover services on the network. Supports --json, --timeout, --scheme, and -t <type>.
+
+  rr info <url>	            Show info about a specific service URL.
+
+  rr version	              Print rrCLI version.
+
+  rr ping	                  Test that the CLI is running. Prints a simple response.
 ```
 
-## Roadmap
+# Roadmap
 
- -Implement discover command
+## Fall 2025 (Current Semester)
 
- -Implement info command
+* Implement CLI skeleton with discover, info, version, and ping.
 
- -Add service call support
+* Add basic JSON and table-formatted outputs.
 
- -Add plugin system for new features
+* Improve error handling and user feedback.
 
- -(Optional) Firewall/debugging utilities
+## Future Goals
+
+* Service calls: call functions or access properties on services directly from CLI.
+
+* Firewall and connectivity checks.
+
+* Plugin system for extending the CLI.
+
+* Automated test suite.
 
 ## Contributing
 
--Fork the repository
+- Fork the repository
 
--Create a new feature branch (git checkout -b feature/my-feature)
+- Create a new feature branch (git checkout -b feature/my-feature)
 
--Commit your changes (git commit -m "feat: add new feature")
+- Commit your changes (git commit -m "feat: add new feature")
 
--Push to your branch (git push origin feature/my-feature)
+- Push to your branch (git push origin feature/my-feature)
 
--Open a Pull Request
+- Open a Pull Request
 
 
