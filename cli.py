@@ -1,1 +1,0 @@
-print("Hello RR CLI TOOLS!")

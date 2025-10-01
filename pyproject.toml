@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rrcli"
+version = "0.0.1"
+description = "Robot Raconteur CLI (student project)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+rr = "rrcli.cli:app_main"
