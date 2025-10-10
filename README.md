@@ -1,3 +1,5 @@
+theme: jekyll-theme-minimal
+
 # Robot Raconteur CLI Tool  
 
 ## Overview  
