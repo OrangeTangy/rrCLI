@@ -1,6 +1,9 @@
-theme: jekyll-theme-minimal
 
 # Robot Raconteur CLI Tool  
+
+![My Photo](assets/images/profile.jpg)
+
+
 
 ## Overview  
 This project is a command-line interface (CLI) tool for interacting with [**Robot Raconteur**](https://robotraconteur.github.io/robotraconteur/doc/core/latest/getting_started/).  
