@@ -39,6 +39,7 @@ def cmd_discover(args):
     except Exception as e:
         print(f"Discovery error: {e}", file=sys.stderr)
         sys.exit(2)
+        
 
     if args.json:
         print(json.dumps(results, indent=2))
