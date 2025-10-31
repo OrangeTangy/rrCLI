@@ -3,6 +3,7 @@ from .commands.discover import cmd_discover
 from .commands.info import cmd_info
 from .commands.version import cmd_version
 from .commands.ping import cmd_ping
+from.commands.find_node import cmd_find_node
 
 def build_parser():
     parser = argparse.ArgumentParser(
@@ -32,6 +33,12 @@ def build_parser():
     # ping command
     p_ping = sub.add_parser("ping", help="Test if rrCLI is working")
     p_ping.set_defaults(func=cmd_ping)
+
+    
+    p_find = sub.add_parser("find-node", help="Find a node by name")
+    p_find.add_argument("name", help="Node name to search for")
+    p_find.add_argument("--json", action="store_true", help="Output in JSON format")
+    p_find.set_defaults(func=cmd_find_node)
 
     return parser
 
