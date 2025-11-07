@@ -4,6 +4,8 @@ from .commands.info import cmd_info
 from .commands.version import cmd_version
 from .commands.ping import cmd_ping
 from.commands.find_node import cmd_find_node
+from commands.find import cmd_find
+
 
 def build_parser():
     parser = argparse.ArgumentParser(
@@ -13,6 +15,13 @@ def build_parser():
 
     sub = parser.add_subparsers(dest="command", required=True)
 
+
+    # find-node
+    p_find = subparsers.add_parser("find", help="Find nodes by name")
+    p_find.add_argument("--name", type=str, required=True, help="Node name to search for")
+    p_find.add_argument("--json", action="store_true", help="Output results in JSON")
+    p_find.set_defaults(func=cmd_find)
+    
     # discover command
     p_disc = sub.add_parser("discover", help="Discover Robot Raconteur services")
     p_disc.add_argument("-t", "--type", help="robdef type to search for (e.g., com.robotraconteur.robotics.robot.Robot)")
