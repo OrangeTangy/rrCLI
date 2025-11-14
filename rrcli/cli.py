@@ -1,6 +1,9 @@
 # rrcli/cli.py
 import argparse
 from rrcli.commands.find import cmd_find
+from commands.types import cmd_types
+from commands.call import cmd_call
+
 
 def build_parser():
     parser = argparse.ArgumentParser(prog="rr", description="Robot Raconteur CLI Tool")
@@ -11,6 +14,19 @@ def build_parser():
     p_find.add_argument("--service", type=str, help="Service type to search for")
     p_find.add_argument("--json", action="store_true", help="Output as JSON")
     p_find.set_defaults(func=cmd_find)
+
+    # rr types
+    p_types = sub.add_parser("types", help="Inspect a service's type information")
+    p_types.add_argument("url", help="Service URL to inspect")
+    p_types.set_defaults(func=cmd_types)
+    
+    # rr call
+    p_call = sub.add_parser("call", help="Call a service function or property")
+    p_call.add_argument("url", help="Service URL")
+    p_call.add_argument("member", help="Function or property name")
+    p_call.add_argument("args", nargs="*", help="Arguments for function")
+    p_call.set_defaults(func=cmd_call)
+
 
     return parser
 
