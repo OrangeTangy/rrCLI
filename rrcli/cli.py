@@ -21,7 +21,7 @@ def build_parser():
     p_types.set_defaults(func=cmd_types)
     
     # rr call
-    p_call = sub.add_parser("call", help="Call a service function or property")
+    p_call = sub.add_parser("call", help="Call a service function has get property")
     p_call.add_argument("url", help="Service URL")
     p_call.add_argument("member", help="Function or property name")
     p_call.add_argument("args", nargs="*", help="Arguments for function")
