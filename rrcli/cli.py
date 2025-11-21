@@ -4,6 +4,7 @@ from rrcli.commands.find import cmd_find
 from commands.types import cmd_types
 from commands.call import cmd_call
  from rrcli.commands.list_services import cmd_list_services
+  from rrcli.commands.call_property import cmd_call_property
 
 
 def build_parser():
@@ -20,6 +21,12 @@ def build_parser():
     p_ls = sub.add_parser("list-services", help="List all services exposed by a node")
     p_ls.add_argument("url")
     p_ls.set_defaults(func=cmd_list_services)
+  
+    p_prop = sub.add_parser("call-property", help="Read or write a property")
+    p_prop.add_argument("url")
+    p_prop.add_argument("property")
+    p_prop.add_argument("--value", help="Optional value to write")
+    p_prop.set_defaults(func=cmd_call_property)
 
     # rr types
     p_types = sub.add_parser("types", help="Inspect a service's type information")
