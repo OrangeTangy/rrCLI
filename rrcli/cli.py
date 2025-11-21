@@ -3,6 +3,7 @@ import argparse
 from rrcli.commands.find import cmd_find
 from commands.types import cmd_types
 from commands.call import cmd_call
+ from rrcli.commands.list_services import cmd_list_services
 
 
 def build_parser():
@@ -14,6 +15,11 @@ def build_parser():
     p_find.add_argument("--service", type=str, help="Service type to search for")
     p_find.add_argument("--json", action="store_true", help="Output as JSON")
     p_find.set_defaults(func=cmd_find)
+   
+
+    p_ls = sub.add_parser("list-services", help="List all services exposed by a node")
+    p_ls.add_argument("url")
+    p_ls.set_defaults(func=cmd_list_services)
 
     # rr types
     p_types = sub.add_parser("types", help="Inspect a service's type information")
